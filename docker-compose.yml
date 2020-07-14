@@ -7,7 +7,7 @@ services:
       - NGINX_HOST=joonas.tech
 
     volumes:
-      - ./public:/var/www/html
+      - ./public:/usr/share/nginx/html:ro
 
     labels:
       - "traefik.backend=static-homepage"
