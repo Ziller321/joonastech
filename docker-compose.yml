@@ -1,0 +1,22 @@
+version: "2"
+
+services:
+  ghostblog:
+    image: library/nginx:latest
+    environment:
+      - NGINX_HOST=joonas.tech
+
+    volumes:
+      - ./public:/var/www/html
+
+    labels:
+      - "traefik.backend=static-homepage"
+      - "traefik.frontend.rule=Host:joonas.tech"
+      - "traefik.docker.network=traefik_default"
+
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
