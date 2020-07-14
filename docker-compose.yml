@@ -1,7 +1,7 @@
 version: "2"
 
 services:
-  ghostblog:
+  homepage:
     image: library/nginx:latest
     environment:
       - NGINX_HOST=joonas.tech
